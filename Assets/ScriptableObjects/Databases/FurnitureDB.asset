@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: FurnitureDB
   m_EditorClassIdentifier: 
   dataList:
-  - {fileID: 11400000, guid: 55edf83f076bc16458257c1a86d3f6b5, type: 2}
-  - {fileID: 11400000, guid: fbb734ac87b35c045aca304db746f023, type: 2}
-  - {fileID: 11400000, guid: 56ffbc1e36e8b9146b8c6cbf37fcbba9, type: 2}
+  - {fileID: 11400000, guid: e8c0788fc372d9b45b38e124c27f76f2, type: 2}
+  - {fileID: 11400000, guid: 2117426b8c88a6e44bbf3aba53cd9326, type: 2}
+  - {fileID: 11400000, guid: fa084c071bb8c5c4a91bf507ef58f085, type: 2}
+  - {fileID: 11400000, guid: bdc7ff8a2700adc4dbb57dc3a4eb85ff, type: 2}
+  - {fileID: 11400000, guid: f01b3648f8c468f4993b8b3340476231, type: 2}
+  - {fileID: 11400000, guid: 0b712991aeb266347ae79c15a30ddf72, type: 2}

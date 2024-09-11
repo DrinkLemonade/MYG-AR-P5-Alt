@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entryName: Lamps
   description: Entry Description
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 8f4ac391389ea9c4bb18596fe83f6c4c, type: 3}
