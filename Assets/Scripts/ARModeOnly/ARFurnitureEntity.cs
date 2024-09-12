@@ -1,6 +1,4 @@
 using Lean.Touch;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ARFurnitureEntity : MonoBehaviour

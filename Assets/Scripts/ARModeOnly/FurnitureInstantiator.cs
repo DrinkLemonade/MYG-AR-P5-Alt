@@ -1,5 +1,3 @@
-using Lean.Touch;
-using Unity.VisualScripting;
 using UnityEngine;
 using Vuforia;
 

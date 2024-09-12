@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Furniture Category", menuName = "Scriptable Furniture Category")]

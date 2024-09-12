@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using Vuforia;
 
 public class FurnitureManager : MonoBehaviour
 {
