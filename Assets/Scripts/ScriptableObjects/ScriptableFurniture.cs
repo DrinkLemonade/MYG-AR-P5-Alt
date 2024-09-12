@@ -20,13 +20,17 @@ public class ScriptableFurniture : ScriptableDBEntry
     public Mesh associatedMesh;
 
     [SerializeField]
-    private decimal price;
+    private int priceInteger;
+    [SerializeField]
+    [Range(0, 99)]
+    private int priceFraction;
 
     [HideInInspector]
     public string PriceFormatted => FormatPrice();
 
     string FormatPrice()
     {
+        decimal price = priceInteger + (priceFraction / 100);
         return price.ToString("C2", //2 digit point precision
                           CultureInfo.CreateSpecificCulture("fr-FR")); //Metropolitan France
     }

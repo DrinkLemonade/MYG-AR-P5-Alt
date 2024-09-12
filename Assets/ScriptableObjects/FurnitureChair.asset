@@ -17,3 +17,5 @@ MonoBehaviour:
   category: {fileID: 11400000, guid: 55edf83f076bc16458257c1a86d3f6b5, type: 2}
   image: {fileID: 0}
   associatedMesh: {fileID: 1710413051545943800, guid: ced7d5d843f03774e8c82dc8a229be4c, type: 3}
+  priceInteger: 50
+  priceFraction: 40

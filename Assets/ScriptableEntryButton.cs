@@ -9,7 +9,7 @@ public class ScriptableEntryButton : MonoBehaviour
     public ScriptableDBEntry entry;
 
     [SerializeField]
-    TextMeshProUGUI tmp;
+    TextMeshProUGUI tmpName, tmpDesc, tmpPrice;
     [SerializeField]
     Image img;
     [SerializeField]
@@ -29,21 +29,42 @@ public class ScriptableEntryButton : MonoBehaviour
         if (entry is ScriptableFurniture)
         {
             var e = (ScriptableFurniture)entry;
-            tmp.text = e.entryName;
             img.gameObject.SetActive(false);
-            filter.mesh = e.associatedMesh;
-
             rTexture = new RenderTexture(256, 256, 16, RenderTextureFormat.ARGB32);
-            renderCam.targetTexture = rTexture;
-            raw.texture = renderCam.targetTexture;
+
+            SetProductRender(e);
         }
         else if (entry is ScriptableCategory)
         {
             var e = (ScriptableCategory)entry;
-            tmp.text = e.entryName;
+            tmpName.text = e.entryName;
             filter.gameObject.SetActive(false);
+            renderCam.gameObject.SetActive(false);
+            raw.gameObject.SetActive(false);
             img.sprite = e.image;
         }
         else Debug.LogError("Entry not supported!");
+    }
+
+    public void SetProductRender(ScriptableFurniture furn)
+    {
+        tmpName.text = furn.entryName;
+        filter.mesh = furn.associatedMesh;
+
+        renderCam.targetTexture = rTexture;
+        raw.texture = renderCam.targetTexture;
+
+        if (tmpDesc != null) tmpDesc.text = furn.description;
+        if (tmpPrice != null) tmpPrice.text = furn.PriceFormatted;
+
+    }
+
+    public void Click()
+    {
+        if (entry is ScriptableFurniture)
+        {
+            StoreManager.i.EnterFurnitureDetailsPage((ScriptableFurniture)entry);
+        }
+
     }
 }
