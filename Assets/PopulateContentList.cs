@@ -20,6 +20,10 @@ public class PopulateContentList : MonoBehaviour
     [SerializeField]
     GameObject optionHolder, scriptableEntryButtonPrefab;
 
+    [SerializeField]
+    bool arMode;
+
+    public List<ScriptableEntryButton> ButtonsInList;
     //Normally I'd like to do this in a generic, reusable way, but I'm short on time.
     //TODO fix
     //ScriptableDatabase<ScriptableDBEntry> database;
@@ -40,14 +44,9 @@ public class PopulateContentList : MonoBehaviour
             int i = 0;
             foreach (var item in list)
             {
-                var furn = (ScriptableFurniture)item;
-                var go = Instantiate(scriptableEntryButtonPrefab, optionHolder.transform);
-                var logic = go.GetComponent<ScriptableEntryButton>();
-                logic.entry = furn;
-                logic.Init();
-                Debug.Log(furn.entryName);
+                AddFurniture((ScriptableFurniture)item);
                 i++;
-                if (i == populateAmount) break;
+                if (populateAmount > 0 && i == populateAmount) break;
             }
         }
         else if (catDb != null)
@@ -60,6 +59,8 @@ public class PopulateContentList : MonoBehaviour
                 logic.entry = cat;
                 logic.Init();
                 Debug.Log(cat.entryName);
+
+                ButtonsInList.Add(logic);
             }
 
         }
@@ -67,6 +68,21 @@ public class PopulateContentList : MonoBehaviour
 
     }
 
+
+    public void AddFurniture(ScriptableFurniture furn)
+    {
+        var go = Instantiate(scriptableEntryButtonPrefab, optionHolder.transform);
+        var logic = go.GetComponent<ScriptableEntryButton>();
+        logic.entry = furn;
+        logic.Init();
+        Debug.Log(furn.entryName);
+
+        //Set nameplate according to whether we're an AR PopulateContentList or not
+        logic.NameplateMode(arMode);
+
+        ButtonsInList.Add(logic);
+
+    }
     // Update is called once per frame
     void Update()
     {

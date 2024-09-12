@@ -15,6 +15,9 @@ public class StoreManager : MonoBehaviour
 
     [SerializeField]
     GameObject pageLogin, pageLanding, pageSearch, pageInfo;
+
+    [SerializeField]
+    PopulateContentList searchContents;
     enum Page
     {
         Login, Landing, SearchByCategory, SearchByName, FurnitureInfo
@@ -31,6 +34,13 @@ public class StoreManager : MonoBehaviour
         pageLanding.SetActive(true);
     }
 
+    private void SwitchToPage(GameObject page)
+    {
+        activePage.SetActive(false);
+        activePage = page;
+        activePage.SetActive(true);
+    }
+
     void PageLogin()
     {
 
@@ -40,9 +50,7 @@ public class StoreManager : MonoBehaviour
     {
         selectedProduct = furn;
 
-        activePage.SetActive(false);
-        activePage = pageInfo;
-        activePage.SetActive(true);
+        SwitchToPage(pageInfo);
 
         selectedProductDisplay.entry = selectedProduct;
         selectedProductDisplay.Init();
@@ -50,14 +58,38 @@ public class StoreManager : MonoBehaviour
 
     public void EnterMainPage()
     {
-        activePage.SetActive(false);
-        activePage = pageLanding;
-        activePage.SetActive(true);
+        SwitchToPage(pageLanding);
     }
 
     public void EnterArMode()
     {
         SceneManager.LoadScene("ARScene");
+    }
+
+    public void SearchProductsByCategory(ScriptableCategory cat)
+    {
+        SwitchToPage(pageSearch);
+        foreach (var item in searchContents.ButtonsInList)
+        {
+            ScriptableFurniture furn = (ScriptableFurniture)item.entry;
+            if (furn.category == cat) item.gameObject.SetActive(true);
+            else item.gameObject.SetActive(false);
+
+        }
+    }
+
+    public void SearchProductsByName(string name)
+    {
+        if (activePage != pageSearch) SwitchToPage(pageSearch);
+        foreach (var item in searchContents.ButtonsInList)
+        {
+            item.gameObject.SetActive(true);
+            ScriptableFurniture furn = (ScriptableFurniture)item.entry;
+            if (furn.name.Contains(name)) item.gameObject.SetActive(true);
+            else item.gameObject.SetActive(false);
+
+        }
+
     }
     // Start is called before the first frame update
     void Start()

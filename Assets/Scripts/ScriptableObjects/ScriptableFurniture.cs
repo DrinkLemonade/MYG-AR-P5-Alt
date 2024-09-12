@@ -13,7 +13,7 @@ public class ScriptableFurniture : ScriptableDBEntry
     [SerializeField]
     public string description = "Entry Description";
     [SerializeField]
-    ScriptableCategory category;
+    public ScriptableCategory category;
     [SerializeField]
     public Sprite image;
     [SerializeField]

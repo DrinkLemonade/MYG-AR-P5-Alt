@@ -3,7 +3,7 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 *com.ptc.vuforia.engine-10.25.4.tgz*
-/[Uu]nused/
+/*[Uu]nused*/
 /[Pp]layServicesResolver/
 /[Ll]ibrary/
 /[Tt]emp/

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScriptableEntryButton : MonoBehaviour
@@ -9,7 +10,9 @@ public class ScriptableEntryButton : MonoBehaviour
     public ScriptableDBEntry entry;
 
     [SerializeField]
-    TextMeshProUGUI tmpName, tmpDesc, tmpPrice;
+    TextMeshProUGUI tmpNameMain, tmpNameAr, tmpDesc, tmpPrice;
+    [SerializeField]
+    GameObject mainNameplate, arModeNameplate;
     [SerializeField]
     Image img;
     [SerializeField]
@@ -37,7 +40,7 @@ public class ScriptableEntryButton : MonoBehaviour
         else if (entry is ScriptableCategory)
         {
             var e = (ScriptableCategory)entry;
-            tmpName.text = e.entryName;
+            tmpNameMain.text = e.entryName;
             filter.gameObject.SetActive(false);
             renderCam.gameObject.SetActive(false);
             raw.gameObject.SetActive(false);
@@ -46,9 +49,27 @@ public class ScriptableEntryButton : MonoBehaviour
         else Debug.LogError("Entry not supported!");
     }
 
+    public void NameplateMode(bool arMode)
+    {
+        if (arMode)
+        {
+            ScriptableFurniture e = (ScriptableFurniture)entry;
+            tmpNameAr.text = e.entryName;
+            arModeNameplate.SetActive(true);
+            mainNameplate.SetActive(false);
+        }
+        else
+        {
+            ScriptableFurniture e = (ScriptableFurniture)entry;
+            tmpNameMain.text = e.entryName;
+            arModeNameplate.SetActive(false);
+            mainNameplate.SetActive(true);
+        }
+    }
+
     public void SetProductRender(ScriptableFurniture furn)
     {
-        tmpName.text = furn.entryName;
+        tmpNameMain.text = furn.entryName;
         filter.mesh = furn.associatedMesh;
 
         renderCam.targetTexture = rTexture;
@@ -61,10 +82,23 @@ public class ScriptableEntryButton : MonoBehaviour
 
     public void Click()
     {
-        if (entry is ScriptableFurniture)
+        if (SceneManager.GetActiveScene().name == "StoreScene")
         {
-            StoreManager.i.EnterFurnitureDetailsPage((ScriptableFurniture)entry);
+            if (entry is ScriptableFurniture)
+            {
+                StoreManager.i.EnterFurnitureDetailsPage((ScriptableFurniture)entry);
+            }
+            else if (entry is ScriptableCategory)
+            {
+                StoreManager.i.SearchProductsByCategory((ScriptableCategory)entry);
+            }
         }
-
+        else if (SceneManager.GetActiveScene().name == "ARScene")
+        {
+            if (entry is ScriptableFurniture)
+            {
+                FurnitureManager.i.InstantiateFurniture((ScriptableFurniture)entry);
+            }
+        }
     }
 }

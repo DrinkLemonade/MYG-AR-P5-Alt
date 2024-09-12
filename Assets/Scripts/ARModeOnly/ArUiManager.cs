@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ArUiManager : MonoBehaviour
@@ -15,12 +16,37 @@ public class ArUiManager : MonoBehaviour
     [SerializeField]
     ARFurnitureInfoPanel infoPanel;
 
+    [SerializeField]
+    PopulateContentList favoritesHolder;
+
     private void Awake()
     {
         if (i != null)
             Destroy(i.gameObject);
 
         i = this;
+
+        if (SessionData.i.viewInAr != null)
+        {
+
+            //TODO: Less sloppy
+            bool exists = false;
+            foreach (var item in favoritesHolder.ButtonsInList)
+            {
+                if (item.entry == SessionData.i.viewInAr) exists = true; //Highlight the button or something
+                                                         //item.Click();
+            }
+            if (!exists)
+            {
+                favoritesHolder.AddFurniture(SessionData.i.viewInAr);
+            }
+
+        }
+    }
+
+    public void QuitArMode()
+    {
+        SceneManager.LoadScene("StoreScene");
     }
 
     //Not used
