@@ -1,4 +1,4 @@
-# VisuMeuble readme
+# VisuMeuble
 
 ## Project Highlights
 VisuMeuble is a proof-of-concept augmented reality (AR) app for Android platforms, created with the Unity engine. VisuMeuble was developed as part of Event Orizon's "Concepteur et Développeur d'Applications en Réalité Augmenté et Réalité Virtuelle" ("Augmented Reality and Virtual Reality Application Designer and Developer") training program.
@@ -17,15 +17,21 @@ The app's central feature is its AR Mode. Once granted access to the user's phon
 
 ## Media
 
+<details>
+<summary>View GIFs</summary>
+
+  ![Store Main Page](Assets/GitHub/visumeuble%20store%20main%20page.gif)  ![Store Browsing](Assets/GitHub/visumeuble%20browsing.gif)
+</details>
+
 ## Tools and Techniques Used
 VisuMeuble makes use of the following tools and design architecture:
-- Vuforia AR SDK: VisuMeuble relies on Vuforia's image target technology to detect and track the image on which virtual furniture models are superimposed.
-- LeanTouch: VisuMeuble leverages the LeanTouch package's tried-and-true capability to detect touch inputs, detect drag inputs, and track selectable objects.
-- ScriptableObject databases: The furniture and product categories available in the application are all stored in ScriptableObject assets, which serve as data containers. Thanks to this feature, a designer can easily modify, add or remove furniture or product categories via Unity without writing a single line of code.
-- Adaptative UI: Unity's UI Toolkit was purposefully eschewed for this project, in favor of the less potent, but more stable and better-documented UGUI. Through the use of Layout and Layout Element components, VisuMeuble can successfully adapt to most phone and tablet resolutions (though it is limited to landscape only for Store Mode, and portrait only for AR Mode).
-- 3D Previews: VisuMeuble uses RenderTextures to spruce up UI elements. Any UI element associated with a piece of furniture will display a rotating previews of that furniture's 3D model.
-- DOTween: VisuMeuble makes use of the DOTween package in order to provide snappy, pleasing visual feedback whenever an UI button or toggle is selected.
-- Design Brief: VisuMeuble was created following the guidelines and preparatory research outlined in a short, but thorough design brief. This design brief makes use of industry standard conception tools, and includes a use case diagram, a workflow diagram, UI wireframes created in Figma, a concise outline of the app's tech stack, a project milestones and delivery timeline, and development budget estimates.
+- <ins>Vuforia AR SDK</ins>: VisuMeuble relies on Vuforia's image target technology to detect and track the image on which virtual furniture models are superimposed.
+- <ins>LeanTouch</ins>: VisuMeuble leverages the LeanTouch package's tried-and-true capability to detect touch inputs, detect drag inputs, and track selectable objects.
+- <ins>ScriptableObject databases</ins>: The furniture and product categories available in the application are all stored in ScriptableObject assets, which serve as data containers. Thanks to this feature, a designer can easily modify, add or remove furniture or product categories via Unity without writing a single line of code.
+- <ins>Adaptative UI</ins>: Unity's UI Toolkit was purposefully eschewed for this project, in favor of the less potent, but more stable and better-documented UGUI. Through the use of Layout and Layout Element components, VisuMeuble can successfully adapt to most phone and tablet resolutions (though it is limited to landscape only for Store Mode, and portrait only for AR Mode).
+- <ins>3D Previews</ins>: VisuMeuble uses RenderTextures to spruce up UI elements. Any UI element associated with a piece of furniture will display a rotating previews of that furniture's 3D model.
+- <ins>DOTween</ins>: VisuMeuble makes use of the DOTween package in order to provide snappy, pleasing visual feedback whenever an UI button or toggle is selected.
+- <ins>Design Brief</ins>: VisuMeuble was created following the guidelines and preparatory research outlined in a short, but thorough design brief. This design brief makes use of industry standard conception tools, and includes a use case diagram, a workflow diagram, UI wireframes created in Figma, a concise outline of the app's tech stack, a project milestones and delivery timeline, and development budget estimates.
 
 ## Known Issues
 - AR Mode causes a black screen on Samsung Galaxy A10 and A13, and possibly other phone models.
