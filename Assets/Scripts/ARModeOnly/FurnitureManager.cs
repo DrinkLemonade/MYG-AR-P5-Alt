@@ -39,19 +39,7 @@ public class FurnitureManager : MonoBehaviour
             var newFurn = InstantiateThis(scriptableFurniture);
             SelectFurniture(newFurn);
         }
-        //We're selecting a different furniture to preview
-        else if (PrefabUtility.GetCorrespondingObjectFromSource(currentFurniture) != scriptableFurniture.associatedMesh)
-        {
-            //Destroy(currentFurniture); //Hmmm. Need to think about UX here
-            var newFurn = InstantiateThis(scriptableFurniture);
-            SelectFurniture(newFurn);
-        }
-        //We have furniture selected and we're deselecting it
-        else
-        {
-            //Destroy(currentFurniture);
-            //currentFurniture = null;
-        }
+        
 
 
         ARFurnitureEntity InstantiateThis(ScriptableFurniture scr)

@@ -83,8 +83,9 @@ public class StoreManager : MonoBehaviour
         {
             item.gameObject.SetActive(true);
             ScriptableFurniture furn = (ScriptableFurniture)item.entry;
-            if (furn.name.Contains(name)) item.gameObject.SetActive(true);
+            if (furn.entryName.Contains(name, System.StringComparison.InvariantCultureIgnoreCase)) item.gameObject.SetActive(true);
             else item.gameObject.SetActive(false);
+            //Debug.Log($"SEARCH: {furn.entryName} containing {name}: {(furn.entryName.Contains(name))}");
 
         }
 
