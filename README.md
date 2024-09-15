@@ -16,11 +16,6 @@ In Store Mode, the user can browse a catalog of fictional furniture and access v
 The app's central feature is its AR Mode. Once granted access to the user's phone camera, VisuMeuble will display the user's environment. After pointing the camera at the required image target printout, a 3D plane will appear, superimposed on the real world. The user may place furniture from Store Mode on this plane, and select it to view detailed information.
 
 ## Media
-<details>
-<summary>Show .gifs</summary>
-![visumeuble store main page](https://github.com/user-attachments/assets/1eba24f5-e2bd-4124-9642-b52b926ec70c)
-![visumeuble browsing](https://github.com/user-attachments/assets/861addc8-ed71-4594-bc95-2c8529bf21ae)
-</details>
 
 ## Tools and Techniques Used
 VisuMeuble makes use of the following tools and design architecture:
