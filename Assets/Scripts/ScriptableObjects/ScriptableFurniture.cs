@@ -33,4 +33,10 @@ public class ScriptableFurniture : ScriptableDBEntry
                           CultureInfo.CreateSpecificCulture("fr-FR")); //Metropolitan France
     }
 
+    public void SetPriceFromJson(string price)
+    {
+        var splitPrice = price.Split("."); //Example: "33.99" will be split into "33" and "99"
+        priceInteger = System.Convert.ToInt32(splitPrice[0]);
+        priceFraction = System.Convert.ToInt32(splitPrice[1]);
+    }
 }
