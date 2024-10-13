@@ -92,6 +92,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6117470393496277770, guid: bbfa177a05e49bf458cb41e39005207f, type: 3}
+      propertyPath: m_fontSize
+      value: 24.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6117470393496277770, guid: bbfa177a05e49bf458cb41e39005207f, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6534786102473997135, guid: bbfa177a05e49bf458cb41e39005207f, type: 3}
       propertyPath: m_Name
       value: Button

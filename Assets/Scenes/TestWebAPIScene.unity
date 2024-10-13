@@ -428,54 +428,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1093183614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1093183616}
-  - component: {fileID: 1093183615}
-  m_Layer: 0
-  m_Name: WebAPI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1093183615
+--- !u!114 &1093183615 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8248780355706645657, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+  m_PrefabInstance: {fileID: 2008093637561367487}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093183614}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0079c54abbb6d0243bb5e3cca75bd7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downloadedFurniture: []
-  downloadedCategories: []
-  request: 0
-  furnitureInfoRequestName: 
---- !u!4 &1093183616
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093183614}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284152148
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +784,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2008093637561367487
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528334332325568515, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515533019422365375, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
+      propertyPath: m_Name
+      value: WebAPI
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64d8cd9829981ba4cbb9cc06460ea622, type: 3}
 --- !u!114 &4108810734487159039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,7 +878,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1367285377}
   - {fileID: 961254636}
-  - {fileID: 1093183616}
+  - {fileID: 2008093637561367487}
   - {fileID: 1962367337}
   - {fileID: 19998433}
   - {fileID: 133639384868656906}

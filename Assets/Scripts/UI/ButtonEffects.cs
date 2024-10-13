@@ -42,7 +42,7 @@ public class ButtonEffects : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         else if (button != null)
         {
             interactable = button.interactable;
-            if (interactable) SoundManager.i.PlaySound(audioOnSelect);
+            if (interactable && SoundManager.i != null) SoundManager.i.PlaySound(audioOnSelect);
             Debug.Log("button not null. interactable? " + interactable);
         }
 
